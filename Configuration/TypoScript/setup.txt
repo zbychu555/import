@@ -1,0 +1,34 @@
+# Module configuration
+module.tx_macopediaimport {
+	persistence {
+		storagePid = {$module.tx_macopediaimport.persistence.storagePid}
+	}
+	view {
+		templateRootPath = {$module.tx_macopediaimport.view.templateRootPath}
+		partialRootPath = {$module.tx_macopediaimport.view.partialRootPath}
+		layoutRootPath = {$module.tx_macopediaimport.view.layoutRootPath}
+	}
+}
+
+
+config.tx_extbase {
+  persistence.classes {
+    TYPO3\MacopediaImport\Domain\Model\User {
+      mapping {
+        tableName = fe_users
+        userGroup.foreignClass = TYPO3\MacopediaImport\Domain\Model\FrontendUserGroup
+      }
+    }
+	TYPO3\MacopediaImport\Domain\Model\UserGroup {
+	  mapping {
+		tableName = fe_groups
+		userGroup.foreignClass = TYPO3\MacopediaImport\Domain\Model\FrontendUserGroup
+	  }
+	}
+    Tx_Extbase_Domain_Model_FrontendUserGroup {
+      mapping {
+        tableName = fe_groups
+      }
+    }
+  }
+}

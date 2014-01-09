@@ -1,0 +1,14 @@
+module.tx_macopediaimport {
+	view {
+		# cat=module.tx_macopediaimport/file; type=string; label=Path to template root (BE)
+		templateRootPath = EXT:macopedia_import/Resources/Private/Templates/
+		# cat=module.tx_macopediaimport/file; type=string; label=Path to template partials (BE)
+		partialRootPath = EXT:macopedia_import/Resources/Private/Partials/
+		# cat=module.tx_macopediaimport/file; type=string; label=Path to template layouts (BE)
+		layoutRootPath = EXT:macopedia_import/Resources/Private/Layouts/
+	}
+	persistence {
+		# cat=module.tx_macopediaimport//a; type=string; label=Default storage PID
+		storagePid = 1017
+	}
+}
